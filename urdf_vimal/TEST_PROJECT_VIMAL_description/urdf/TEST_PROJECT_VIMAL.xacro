@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<robot name="TEST_PROJECT_VIMAL" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find TEST_PROJECT_VIMAL_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find TEST_PROJECT_VIMAL_description)/urdf/TEST_PROJECT_VIMAL.trans" />
+<xacro:include filename="$(find TEST_PROJECT_VIMAL_description)/urdf/TEST_PROJECT_VIMAL.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0023264199699326716 -1.559963507328602e-16 0.04969353670961541" rpy="0 0 0"/>
+    <mass value="1.0316915999493312"/>
+    <inertia ixx="0.001108" iyy="0.004172" izz="0.004984" ixy="-0.0" iyz="-0.0" ixz="-8e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_whell_1">
+  <inertial>
+    <origin xyz="-1.786475525011877e-07 -0.0025002831323014466 -2.6398473588346016e-07" rpy="0 0 0"/>
+    <mass value="0.11097676048805946"/>
+    <inertia ixx="2.5e-05" iyy="5e-05" izz="2.5e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.080276 0.055284 -0.032855" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/right_whell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.080276 0.055284 -0.032855" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/right_whell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_whell_1">
+  <inertial>
+    <origin xyz="-1.7864755252894327e-07 0.002500283132301759 -2.6398473587652127e-07" rpy="0 0 0"/>
+    <mass value="0.11097676048805946"/>
+    <inertia ixx="2.5e-05" iyy="5e-05" izz="2.5e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.080276 -0.055284 -0.032855" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/left_whell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.080276 -0.055284 -0.032855" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/left_whell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-1.786475523901654e-07 -3.3306690738754696e-16 0.014999736015263485" rpy="0 0 0"/>
+    <mass value="0.4624031687002476"/>
+    <inertia ixx="0.000107" iyy="0.000107" izz="0.000145" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.049724 0.0 -0.077855" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.049724 0.0 -0.077855" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="_mount_1">
+  <inertial>
+    <origin xyz="-0.0498891786475524 -2.9420910152566647e-16 -0.043934451027498225" rpy="0 0 0"/>
+    <mass value="0.48439014073208936"/>
+    <inertia ixx="0.000144" iyy="0.000144" izz="0.00026" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.099613 0.0 -0.110709" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.099613 0.0 -0.110709" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://TEST_PROJECT_VIMAL_description/meshes/_mount_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin xyz="-0.080276 -0.055284 0.032855" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_whell_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin xyz="-0.080276 0.055284 0.032855" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_whell_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin xyz="-0.049889 0.0 -0.032854" rpy="0 0 0"/>
+  <parent link="_mount_1"/>
+  <child link="lidar_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin xyz="0.099613 0.0 0.110709" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="_mount_1"/>
+</joint>
+
+</robot>
